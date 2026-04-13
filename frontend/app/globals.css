@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 31, 41, 51;
+  --background-start-rgb: 244, 247, 251;
+  --background-end-rgb: 255, 255, 255;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-start-rgb));
+  min-height: 100vh;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  h1 { @apply text-4xl font-bold tracking-tight text-text-primary; }
+  h2 { @apply text-3xl font-bold tracking-tight text-text-primary; }
+  h3 { @apply text-2xl font-semibold tracking-tight text-text-primary; }
+  p { @apply leading-relaxed text-text-muted; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-dark text-white font-medium py-2 px-6 rounded-xl transition-all active:scale-95;
+  }
+  .card-premium {
+    @apply bg-surface border border-border shadow-soft rounded-2xl p-6;
+  }
+}

@@ -1,0 +1,87 @@
+# ── Environment & Secrets ───────────────────────────────────────────────────
+.env
+.env.local
+.env.production
+.env.development
+.env.*.local
+.venv
+venv/
+ENV/
+*.env
+auth_key.json
+secrets.json
+**/.env
+**/.env.local
+**/.env.production
+
+# ── Python & Cache ───────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.tox/
+.nox/
+.cache/
+nosetests.xml
+coverage.xml
+*.cover
+*.pyo
+*.pyd
+
+# ── Node.js & Frontend ──────────────────────────────────────────────────────
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/tsconfig.tsbuildinfo
+frontend/.env
+frontend/.env.local
+frontend/.env.production
+frontend/.env.development
+.env
+# ── Database & Migrations ────────────────────────────────────────────────────
+*.db
+*.sqlite3
+# Keep alembic migrations, but ignore local sqlite if used
+# alembic/versions/*.py (DO NOT IGNORE THIS)
+
+# ── OS & IDE ─────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+.claude/
+Microsoft/
+.qwen/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+*.sublime-workspace
+*.sublime-project
+
+# ── Deployment & Logs ───────────────────────────────────────────────────────
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.vercel
+build/
+dist/
+
+# ── Docker ───────────────────────────────────────────────────────────────────
+docker-compose.override.yml
+*.tar
+
+# ── Package Manager ─────────────────────────────────────────────────────────
+# Keep package-lock.json, but ignore yarn/pnpm locks if present
+yarn.lock
+pnpm-lock.yaml
+
+# ── Temporary Files ─────────────────────────────────────────────────────────
+*.tmp
+*.temp
+tmp/
+temp/
