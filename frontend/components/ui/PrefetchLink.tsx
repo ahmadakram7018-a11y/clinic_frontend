@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { useQueryClient } from "@tanstack/react-query";
-import { patientKeys, adminKeys } from "@/hooks/use-patient";
+import { patientKeys } from "@/hooks/use-patient";
+import { adminKeys } from "@/hooks/use-admin";
 
 interface PrefetchLinkProps {
   href: string;

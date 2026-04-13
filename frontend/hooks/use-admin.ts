@@ -82,13 +82,13 @@ export function useVerifyPayment() {
       const response = await apiClient.post(`/admin/payments/${billId}/verify`);
       return response.data;
     },
-    onMutate: async ({ billId }) => {
+    onMutate: async (billId) => {
       await queryClient.cancelQueries({ queryKey: adminKeys.dashboard() });
       const previousDashboard = queryClient.getQueryData<AdminDashboardData>(adminKeys.dashboard());
 
       if (previousDashboard) {
         // Remove the verified payment from pending list
-        queryClient.setQueryData(adminKeys.dashboard(), (old) => {
+        queryClient.setQueryData(adminKeys.dashboard(), (old: AdminDashboardData | undefined) => {
           if (!old) return old;
           return {
             ...old,

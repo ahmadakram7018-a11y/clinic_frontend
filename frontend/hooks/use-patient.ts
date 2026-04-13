@@ -83,7 +83,7 @@ export function usePatientAppointments() {
     queryFn: async () => {
       const response = await apiClient.get("/patient/dashboard");
       const data = response.data.data as DashboardData;
-      return (data.appointments || data.upcoming_appointments || []) as Appointment[];
+      return (data.upcoming_appointments || []) as Appointment[];
     },
     staleTime: 1000 * 60, // 1 minute
   });
@@ -116,7 +116,7 @@ export function useRequestPayment() {
       const previousBills = queryClient.getQueryData<Bill[]>(patientKeys.bills());
 
       if (previousBills) {
-        queryClient.setQueryData(patientKeys.bills(), (old) =>
+        queryClient.setQueryData(patientKeys.bills(), (old: Bill[] | undefined) =>
           old?.map((bill) =>
             bill.id === billId
               ? { ...bill, payment_state: "pending_verification" as const, payment_message: "Payment is pending." }
